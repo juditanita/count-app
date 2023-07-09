@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Mea+Culpa&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Cedarville+Cursive&family=Delius&family=Zeyada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
+:root {
+  --fs-1: 3rem;
+  --fs-2: 2.575rem;
+  --fs-3: 2.4;
+
+  --clr-1: rgb(84, 180, 53);
+  --clr-2: rgb(241, 201, 59);
+}
+
 body {
-  background-image: url("lemon.jpg");
-  background-size: 100%;
+  background-image: url("lemon.JPG");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 30% 60%;
+  background-size: 220%;
+
   font-family: Roboto, sans-serif;
   font-weight: bold;
   text-align: center;
@@ -17,32 +29,50 @@ body {
 .container {
   padding-inline: 2em;
   margin-inline: auto;
-  max-width: 80rem;
-  margin-top: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  max-width: 60%;
 }
+
 .card-title {
-  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  background-color: rgba(205, 243, 227, 0.901);
+  border: 22px solid var(--clr-2);
+
+  color: black;
+
   padding-bottom: 20px;
+  padding-inline: 20px;
   max-width: 80rem;
-  padding: 20px;
+  /* padding: 20px; */
   margin: auto;
   border-radius: 100px 100px 0 0;
   position: relative;
-  line-height: 2.5;
-  border-bottom: 2px solid black;
+  line-height: 1.5;
+
   z-index: 0;
 }
-span.text {
-  font-family: "Zeyada", cursive;
+img {
+  width: 100px;
+  height: auto;
+}
+
+h6 {
+  font-family: "Fredericka the Great", cursive;
   display: block;
   position: absolute;
-  top: 30px;
-  left: 60px;
-  aspect-ratio: 1;
+  top: 170px;
 
-  color: hsla(338, 72%, 22%, 0.65);
+  transform: translate(-50%);
+  left: 50%;
+  line-height: 2rem;
+  aspect-ratio: 1;
+  text-transform: uppercase;
+  color: black;
   letter-spacing: 2.7px;
-  font-size: 1.9rem;
+  font-size: var(--f2-2);
   /* transform: rotate(320deg); */
   font-weight: bold;
 
@@ -51,31 +81,38 @@ span.text {
 span {
   text-transform: capitalize;
   line-height: 1.4;
-  font-size: 26px;
+  font-size: var(--f2-2);
   position: relative;
 }
 
 .card {
-  background-color: aliceblue;
-  padding: 30px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+  border: 22px solid var(--clr-2);
+
+  background-color: rgba(205, 243, 227, 0.901);
+
+  padding: 30px 30px 90px 30px;
+  height: 70vh;
   margin: auto;
   max-width: 80rem;
-  border-radius: 0 0 20px;
+  border-radius: 20px 20px 20px 20px;
 }
 
 h1 {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 3rem;
+  font-size: var(--fs-1);
 }
 
 h2 {
-  font-size: 50px;
+  font-size: var(--fs-2);
   margin-top: 0;
   margin-bottom: 20px;
 }
 h3 {
-  font-size: 35px;
+  font-size: var(--f2-3);
 }
 
 .buttons {
@@ -83,7 +120,7 @@ h3 {
   display: flex;
   text-align: center;
   justify-content: center;
-  gap: 80px;
+  gap: 30px;
 }
 button {
   border: none;
@@ -96,6 +133,8 @@ button {
   border-radius: 5px;
   font-size: 1.5rem;
   text-transform: uppercase;
+  font-family: "Fredericka the Great", cursive;
+  letter-spacing: 1.2px;
 }
 
 button:focus,
@@ -105,9 +144,116 @@ button:hover {
 }
 
 #increment-btn {
-  background: #f1c93b;
+  background: var(--clr-2);
 }
 
 #save-btn {
-  background: #54b435;
+  background: var(--clr-1);
+}
+
+@media screen and (max-width: 880px) {
+  :root {
+    --fs-1: 2rem;
+    --fs-2: 1.95rem;
+    --fs-3: 1.75;
+  }
+  body {
+    background-image: url("lemon.JPG");
+    background-repeat: no-repeat;
+    background-position: 30% 60%;
+    background-size: 320%;
+  }
+  .container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-title {
+    border-bottom: 2px solid rgba(220, 232, 227, 0.672);
+    background-color: #bc7b17;
+    max-width: 80rem;
+    text-transform: uppercase;
+    color: rgb(246, 240, 240);
+    padding-inline: 0px;
+  }
+
+  h2 {
+    padding-top: max(1rem);
+    padding-bottom: max(0.3rem);
+    align-items: end;
+    line-height: 1;
+    font-size: 1.5rem;
+  }
+
+  .card {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: 60vh;
+    border: 2px solid #bc7b17;
+    border-radius: 0 0 20px 20px;
+    background-color: #ebd7d2;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 10px;
+  }
+  button {
+    width: 200px;
+  }
+  h6 {
+    position: absolute;
+    color: black;
+    top: -10px;
+
+    transform: translate(-50%);
+    left: -25px;
+    transform: rotate(-90deg);
+    font-size: 0.6rem;
+
+    display: block;
+    letter-spacing: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 80%;
+    display: flex;
+  }
+
+  .card-title {
+    max-width: 80%;
+    margin: auto;
+    border: none;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  h2 {
+    font-size: 0.9rem;
+    padding-inline: 1rem;
+  }
+
+  h6 {
+    font-size: 0.5rem;
+    letter-spacing: 0;
+    top: 8rem;
+    left: 15px;
+    transform: rotate(0deg);
+  }
+
+  button {
+    max-width: 80%;
+    width: 100px;
+    font-size: 0.6rem;
+  }
 }
